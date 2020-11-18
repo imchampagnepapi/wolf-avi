@@ -1,5 +1,5 @@
 # wolf_avatar
-
+![](bee.gif)
 A new Flutter project written in pure Dart demonstrating how to fetch and save Wolf's user profile picture in your device.
 
 ## Getting Started
