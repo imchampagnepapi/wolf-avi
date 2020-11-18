@@ -1,0 +1,39 @@
+name: wolf_avatar
+description: A new Flutter project written in pure Dart demonstrating how to fetch and save Wolf's user profile picture in your device.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.3
+  path_provider: ^1.6.7
+  fluttertoast: ^7.1.1
+  flare_flutter: ^2.0.4
+  image_downloader: ^0.20.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  assets:
+    - assets/images/
+    - assets/flare/
+
+  uses-material-design: true
+  fonts:
+    - family: Assemblage
+      fonts:
+        - asset: assets/fonts/Assemblage-W00-Bold.ttf
+          weight: 700
+    - family: Open Sans Extrabold
+      fonts:
+        - asset: assets/fonts/open-sans-extrabold.ttf
+          weight: 700
+
