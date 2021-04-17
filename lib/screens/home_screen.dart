@@ -11,8 +11,8 @@ import 'package:wolf_avatar/widgets/reusable_widgets.dart';
 
 class HomeScreen extends StatefulWidget{
 
-  final String title;
-  const HomeScreen({Key key, this.title}) : super(key: key);
+  final String? title;
+  const HomeScreen({Key? key, this.title}) : super(key: key);
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -56,20 +56,25 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ReusableWidgets.getAppBar(widget.title),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(56),
+        child: ReusableWidgets.getAppBar(widget.title!),
+      ),
       resizeToAvoidBottomInset : false,
       bottomSheet: ReusableWidgets.buildBottomSheet(context),
       body: buildHomepageBody()
     );
   }
 
-  void onFetchBtnClicked(){
+  onFetchBtnClicked(){
     _debouncer.run(() {
       ReusableWidgets.getSmallCircularProgressBar(context, "Please Wait");
       print(_userIdTxtController.text);
       String _url = Utils().constructAvatarUrl(_userIdTxtController.text);
       print(_url);
-      _startDownloadingAvatar(_url);
+      if(_url.isNotEmpty){
+        _startDownloadingAvatar(_url);
+      }
     });
   }
 

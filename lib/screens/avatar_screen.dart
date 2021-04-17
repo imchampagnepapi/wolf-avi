@@ -9,9 +9,9 @@ import 'package:wolf_avatar/widgets/reusable_widgets.dart';
 
 class AvatarPreviewScreen extends StatefulWidget{
 
-  final String filePath;
+  final String? filePath;
 
-  const AvatarPreviewScreen({Key key, this.filePath}) : super(key: key);
+  const AvatarPreviewScreen({Key? key, this.filePath}) : super(key: key);
   @override
   _AvatarPreviewScreenState createState() => _AvatarPreviewScreenState();
 }
@@ -31,12 +31,15 @@ class _AvatarPreviewScreenState extends State<AvatarPreviewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ReusableWidgets.getAppBar("Preview Screen"),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(56),
+        child: ReusableWidgets.getAppBar("Preview Screen"),
+      ),
       body: SizedBox.expand(
         child: InteractiveViewer(
           maxScale: 5.0,
           minScale: 1.0,
-          child: Image.file(File(widget.filePath)),
+          child: Image.file(File(widget.filePath!)),
         )
       ),
     );

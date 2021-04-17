@@ -4,7 +4,6 @@ import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:wolf_avatar/utils/click_debouncer.dart';
 import 'package:wolf_avatar/utils/constants.dart';
 import 'package:wolf_avatar/utils/hex_color.dart';
 
@@ -63,7 +62,7 @@ class ReusableWidgets{
     );
   }
 
-  static Widget buildBtn(BuildContext context, Function clickFunc){
+  static Widget buildBtn(BuildContext context, VoidCallback clickFunc){
     return Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(8.0),
